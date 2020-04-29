@@ -46,12 +46,13 @@ describe("Crawler tester", () => {
         })
     })
     describe("Bad body errors", () => {
-        it("Return 422 if search is empty or empty", (done) => {
+        it("Return 422 if search is empty", (done) => {
             chai.request(server).post('/').send({
                 search: '  ',
                 int: 100
             }).end((end, res) => {
                 res.should.have.status(422);
+                res.error.text.should.be.eql("either search is invalid or empty or has decimal parts")
                 done();
             })
         })
@@ -61,6 +62,7 @@ describe("Crawler tester", () => {
                 int: 'a'
             }).end((end, res) => {
                 res.should.have.status(422);
+                JSON.parse(res.error.text).msg.should.be.eql("int must be integer")
                 done();
             })
         })
@@ -70,6 +72,17 @@ describe("Crawler tester", () => {
                 int: 1.2
             }).end((end, res) => {
                 res.should.have.status(422);
+                JSON.parse(res.error.text).msg.should.be.eql("int must be integer")
+                done();
+            })
+        })
+        it("Return 422 if int is less than 1", (done) => {
+            chai.request(server).post('/').send({
+                search: 'teste',
+                int: 0
+            }).end((end, res) => {
+                res.should.have.status(422);
+                JSON.parse(res.error.text).msg.should.be.eql("int must be greater than 0")
                 done();
             })
         })
