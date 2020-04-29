@@ -3,7 +3,7 @@ const SELECTORS = {
         MAIN: "#searchResults",
         ITEM: {
             MAIN: ".results-item",
-            TITLE: ".main-title",
+            NAME: ".main-title",
             URL: ".item-image",
             PRICE_FRACTION: ".price__fraction",
             PRICE_DECIMALS: ".price__decimals",

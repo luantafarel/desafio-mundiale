@@ -9,8 +9,8 @@ const getProductsListBySearchQuery = async (searchQuery, page) => {
         let productsListLocal = []
         for (let i = 0; i < productLiElements.length; i++) {
             const productObject = {
-                title: productLiElements[i].querySelector(SELECTORS.RESULTS_LIST.ITEM.TITLE).textContent.trim(),
-                url: productLiElements[i].querySelector(SELECTORS.RESULTS_LIST.ITEM.URL).href,
+                name: productLiElements[i].querySelector(SELECTORS.RESULTS_LIST.ITEM.NAME).textContent.trim(),
+                link: productLiElements[i].querySelector(SELECTORS.RESULTS_LIST.ITEM.URL).href,
                 price: productLiElements[i].querySelector(SELECTORS.RESULTS_LIST.ITEM.PRICE).textContent.trim(),
                 store: productLiElements[i].querySelector(SELECTORS.RESULTS_LIST.ITEM.BRAND) === null ? "Sem informação de loja" : productLiElements[i].querySelector(SELECTORS.RESULTS_LIST.ITEM.BRAND).textContent.trim(),
                 state: productLiElements[i].querySelector(SELECTORS.RESULTS_LIST.ITEM.STATE) === null ? "Sem informação de estado" : productLiElements[i].querySelector(SELECTORS.RESULTS_LIST.ITEM.STATE).textContent.trim()
