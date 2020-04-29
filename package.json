@@ -1,0 +1,17 @@
+{
+  "name": "desafio-mondiale",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "luantafarel <luantafarel7@gmail.com>",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jest": "^25.5.1",
+    "puppeteer": "^3.0.1",
+    "threads": "^1.4.1"
+  }
+}
