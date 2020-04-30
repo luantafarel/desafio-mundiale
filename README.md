@@ -31,6 +31,8 @@ Também existe a possibilidade de executar o processo em containers utilizando o
 docker-compose up
 ```
 Ficando disponivel no ip do seu computador na porta 3000
+-- Atualização:
+Infelizmente não tem uma documentação que inclua o node 12 trabalhando com pupeteer em docker, o sistema funciona em containers mas quando precisa utilizar da função do pupeteer ele trava. :(
 
 ### Crawler Mercado Livre
 Objetivo:
